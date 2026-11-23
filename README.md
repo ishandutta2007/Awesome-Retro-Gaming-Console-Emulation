@@ -77,7 +77,7 @@ The table below lists leading commercial, subscription, and hosted retro gaming 
 
 The following open-source emulators, frontends, distributions, and preservation servers are sorted in descending order by GitHub community stars:
 
-| 🎮 Repository | ⭐ Stars | 📂 Core Role | 💻 Primary Target Platforms | 📝 Highlights |
+| 🎮 Repository | ⭐ GitHub_Stars | 📂 Core Role | 💻 Primary Target Platforms | 📝 Highlights |
 | :--- | :--- | :--- | :--- | :--- |
 | **[RPCS3](https://github.com/RPCS3/rpcs3)** | [![Stars](https://img.shields.io/github/stars/RPCS3/rpcs3?style=social&color=white)](https://github.com/RPCS3/rpcs3/stargazers) | PS3 Console Emulator | Windows, Linux, macOS, FreeBSD | High-performance C++ Sony PlayStation 3 emulator & debugger powered by LLVM recompilers and Vulkan rendering. |
 | **[OpenEmu](https://github.com/OpenEmu/OpenEmu)** | [![Stars](https://img.shields.io/github/stars/OpenEmu/OpenEmu?style=social&color=white)](https://github.com/OpenEmu/OpenEmu/stargazers) | Modular Multi-System Frontend | macOS | Beautiful native macOS game organizer and multi-core emulation player with CoreAnimation/Metal shaders and automated artwork downloading. |
