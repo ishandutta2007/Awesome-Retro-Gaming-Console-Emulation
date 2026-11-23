@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="360">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0818" />
+      <stop offset="40%" stop-color="#130f30" />
+      <stop offset="100%" stop-color="#080415" />
+    </linearGradient>
+    
+    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff007f" />
+      <stop offset="50%" stop-color="#7928ca" />
+      <stop offset="100%" stop-color="#00f0ff" />
+    </linearGradient>
+
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="60%" stop-color="#00f5d4" />
+      <stop offset="100%" stop-color="#00bbff" />
+    </linearGradient>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes scanline {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(360px); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.35; transform: scale(1); }
+      50% { opacity: 0.65; transform: scale(1.08); }
+    }
+    @keyframes floatOrb1 {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(30px, -20px); }
+    }
+    @keyframes floatOrb2 {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(-25px, 25px); }
+    }
+    @keyframes gridPulse {
+      0%, 100% { opacity: 0.15; }
+      50% { opacity: 0.3; }
+    }
+    .grid-lines {
+      stroke: #00f0ff;
+      stroke-width: 0.6;
+      stroke-opacity: 0.2;
+      animation: gridPulse 6s ease-in-out infinite;
+    }
+    .orb1 {
+      animation: floatOrb1 8s ease-in-out infinite, pulseGlow 5s ease-in-out infinite;
+      transform-origin: center;
+    }
+    .orb2 {
+      animation: floatOrb2 9s ease-in-out infinite, pulseGlow 6s ease-in-out infinite;
+      transform-origin: center;
+    }
+    .scanline-bar {
+      animation: scanline 7s linear infinite;
+    }
+  </style>
+
+  <!-- Background -->
+  <rect width="1200" height="360" fill="url(#bg-grad)" rx="16" />
+
+  <!-- Animated Glowing Dynamic Elements in Background -->
+  <circle class="orb1" cx="220" cy="180" r="160" fill="#ff007f" opacity="0.2" filter="url(#glow)" />
+  <circle class="orb2" cx="980" cy="180" r="180" fill="#00f0ff" opacity="0.22" filter="url(#glow)" />
+  <circle cx="600" cy="70" r="100" fill="#7928ca" opacity="0.25" filter="url(#glow)" />
+
+  <!-- Retro Cyber Grid in Background -->
+  <g class="grid-lines">
+    <line x1="0" y1="60" x2="1200" y2="60" />
+    <line x1="0" y1="120" x2="1200" y2="120" />
+    <line x1="0" y1="180" x2="1200" y2="180" />
+    <line x1="0" y1="240" x2="1200" y2="240" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+    <line x1="150" y1="0" x2="150" y2="360" />
+    <line x1="300" y1="0" x2="300" y2="360" />
+    <line x1="450" y1="0" x2="450" y2="360" />
+    <line x1="600" y1="0" x2="600" y2="360" />
+    <line x1="750" y1="0" x2="750" y2="360" />
+    <line x1="900" y1="0" x2="900" y2="360" />
+    <line x1="1050" y1="0" x2="1050" y2="360" />
+  </g>
+
+  <!-- CRT Scanline effect bar -->
+  <rect class="scanline-bar" x="0" y="0" width="1200" height="2" fill="#00f0ff" opacity="0.3" filter="url(#soft-glow)" />
+
+  <!-- Retro Decorative Console & Arcade Badges / Chips -->
+  <g opacity="0.85" transform="translate(50, 42)">
+    <rect x="0" y="0" width="86" height="26" rx="13" fill="#ff007f" fill-opacity="0.25" stroke="#ff007f" stroke-width="1.2" />
+    <text x="43" y="17" fill="#ff66b2" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle">🕹 16/32-BIT</text>
+  </g>
+  <g opacity="0.85" transform="translate(150, 42)">
+    <rect x="0" y="0" width="102" height="26" rx="13" fill="#00f0ff" fill-opacity="0.2" stroke="#00f0ff" stroke-width="1.2" />
+    <text x="51" y="17" fill="#66f7ff" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle">⚡ LIBRETRO</text>
+  </g>
+  <g opacity="0.85" transform="translate(930, 42)">
+    <rect x="0" y="0" width="106" height="26" rx="13" fill="#7928ca" fill-opacity="0.3" stroke="#a855f7" stroke-width="1.2" />
+    <text x="53" y="17" fill="#c084fc" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle">💾 PRESERVATION</text>
+  </g>
+  <g opacity="0.85" transform="translate(1050, 42)">
+    <rect x="0" y="0" width="98" height="26" rx="13" fill="#ffb703" fill-opacity="0.2" stroke="#ffb703" stroke-width="1.2" />
+    <text x="49" y="17" fill="#ffd166" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle">📺 CRT SHADERS</text>
+  </g>
+
+  <!-- Foreground Title (Always In Foreground and Legible) -->
+  <g transform="translate(485, 80)">
+    <rect x="0" y="0" width="230" height="30" rx="15" fill="#1e1b4b" stroke="url(#accent-grad)" stroke-width="1.5" />
+    <text x="115" y="20" fill="#38bdf8" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" letter-spacing="1.5" text-anchor="middle">RETRO ARCHITECTURE &amp; EMULATION</text>
+  </g>
+
+  <!-- Main Headline -->
+  <text x="600" y="165" fill="url(#text-grad)" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="42" font-weight="900" letter-spacing="0.5" text-anchor="middle" filter="url(#soft-glow)">Awesome Retro Gaming Console Emulation</text>
+
+  <!-- Subtitle -->
+  <text x="600" y="215" fill="#e2e8f0" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="500" letter-spacing="0.2" text-anchor="middle">Multi-System Emulators • Turnkey Linux OSes • WebAssembly Cloud Arcades • Cycle-Accurate Cores</text>
+
+  <!-- Tech tags pills along the bottom -->
+  <g transform="translate(170, 265)">
+    <rect x="0" y="0" width="145" height="34" rx="17" fill="#0f172a" stroke="#334155" stroke-width="1.2" />
+    <text x="72" y="22" fill="#94a3b8" font-family="'Segoe UI', monospace" font-size="13" font-weight="600" text-anchor="middle">🎮 RetroArch &amp; Cores</text>
+
+    <rect x="165" y="0" width="150" height="34" rx="17" fill="#0f172a" stroke="#334155" stroke-width="1.2" />
+    <text x="240" y="22" fill="#94a3b8" font-family="'Segoe UI', monospace" font-size="13" font-weight="600" text-anchor="middle">🐧 Batocera &amp; RetroPie</text>
+
+    <rect x="335" y="0" width="160" height="34" rx="17" fill="#0f172a" stroke="#334155" stroke-width="1.2" />
+    <text x="415" y="22" fill="#94a3b8" font-family="'Segoe UI', monospace" font-size="13" font-weight="600" text-anchor="middle">🚀 Dolphin / RPCS3 / PCSX2</text>
+
+    <rect x="515" y="0" width="155" height="34" rx="17" fill="#0f172a" stroke="#334155" stroke-width="1.2" />
+    <text x="592" y="22" fill="#94a3b8" font-family="'Segoe UI', monospace" font-size="13" font-weight="600" text-anchor="middle">🌐 RomM &amp; EmulatorJS</text>
+
+    <rect x="690" y="0" width="170" height="34" rx="17" fill="#0f172a" stroke="#334155" stroke-width="1.2" />
+    <text x="775" y="22" fill="#94a3b8" font-family="'Segoe UI', monospace" font-size="13" font-weight="600" text-anchor="middle">🏆 RetroAchievements API</text>
+  </g>
+
+  <!-- Border Frame Glow -->
+  <rect x="1" y="1" width="1198" height="358" rx="15" fill="none" stroke="url(#accent-grad)" stroke-width="1.5" opacity="0.55" />
+</svg>
